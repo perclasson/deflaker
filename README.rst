@@ -13,6 +13,7 @@ How to develop and install
 Create an virtualenv
 
      virtualenv -p python3 venv
+
      pip install -r requirements_dev.txt
 
 
