@@ -2,17 +2,25 @@
 
 """Console script for deflaker."""
 import sys
-import click
+import argparse
+from .deflaker import find_flaky_tests
 
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--sha', type=str, default='HEAD~1', help='SHA to compare against to find flaky tests.')
+    parser.add_argument('--repo', type=str, help='File path to git repo to get changes for.', required=True)
+    parser.add_argument('--tests', type=str, help='File path to test.', required=True)
+    args = parser.parse_args()
 
-@click.command()
-def main(args=None):
-    """Console script for deflaker."""
-    click.echo("Replace this message by putting your code into "
-               "deflaker.cli.main")
-    click.echo("See click documentation at http://click.pocoo.org/")
-    return 0
+    sys.stdout.write('Finding flaky tests...\n')
+    flaky_tests = find_flaky_tests(sha=args.sha, git_repo=args.repo, tests=args.tests)
 
+    if flaky_tests:
+        sys.stdout.write('\n'.join(flaky_tests))
+    else:
+        sys.stdout.write('No flaky tests!')
+    sys.stdout.write('\n')
+    
 
-if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+if __name__ == '__main__':
+    main()

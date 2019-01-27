@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=6.0', 'GitPython==2.1.11', ]
+requirements = ['GitPython==2.1.11', 'unidiff==0.5.5', 'pytest==3.8.2', 'coverage==4.5.1']
 
 setup_requirements = ['pytest-runner', ]
 
@@ -19,7 +19,7 @@ test_requirements = ['pytest', ]
 
 setup(
     author="Per Classon",
-    author_email='audreyr@example.com',
+    author_email='perwclasson@gmail.com',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
