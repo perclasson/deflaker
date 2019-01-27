@@ -12,6 +12,8 @@ class Currency:
             return '${amount}'.format(amount=self.amount)
         elif self.currency == 'EUR':
             return '{amount}€'.format(amount=self.amount)
+        elif self.currency == 'SEK':
+            return '{amount} kr'.format(amount=self.amount)
         else:
             raise NotImplementedError
 
