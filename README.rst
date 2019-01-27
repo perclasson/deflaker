@@ -2,7 +2,7 @@
 DeFlaker
 ========
 
-Automatically detect flaky tests without rerunning. Inspired by https://github.com/gmu-swe/deflaker
+Automatically detect flaky tests without rerunning. Minimal replication of https://github.com/gmu-swe/deflaker
 
 * Free software: MIT license
 * Documentation: https://deflaker.readthedocs.io.
