@@ -1,0 +1,3 @@
+[submodule "flaky_example"]
+	path = flaky_example
+	url = ./flaky_example/
