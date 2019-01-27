@@ -2,36 +2,25 @@
 DeFlaker
 ========
 
-
-.. image:: https://img.shields.io/pypi/v/deflaker.svg
-        :target: https://pypi.python.org/pypi/deflaker
-
-.. image:: https://img.shields.io/travis/perclasson/deflaker.svg
-        :target: https://travis-ci.org/perclasson/deflaker
-
-.. image:: https://readthedocs.org/projects/deflaker/badge/?version=latest
-        :target: https://deflaker.readthedocs.io/en/latest/?badge=latest
-        :alt: Documentation Status
-
-
-
-
-Automatically detect flaky tests. Inspired by https://github.com/gmu-swe/deflaker
-
+Automatically detect flaky tests without rerunning. Inspired by https://github.com/gmu-swe/deflaker
 
 * Free software: MIT license
 * Documentation: https://deflaker.readthedocs.io.
 
-
-Features
+How to develop and install
 --------
 
-* TODO
+Create an virtualenv
 
-Credits
--------
+     virtualenv -p python3 venv
+     pip install -r requirements_dev.txt
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+How to run
+--------
+
+    python -m deflaker.cli --repo=. --tests=flaky_example/ --sha=065759decaf6777b3d6f3d9adbb40ae2fe0a7764..ff7662922027159bd1b2821508f07eb8a5b499d4
+
+Will output:
+
+    > flaky_example/currency_test.py::TestCurrency::()::test_with_date
